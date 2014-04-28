@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pommes_HtmlMinify>
+            <version>0.1.0</version>
+        </Pommes_HtmlMinify>
+    </modules>
+    <global>
+        <models>
+            <pommes_htmlminify>
+                <class>Pommes_HtmlMinify_Model</class>
+                <resourceModel>pommes_htmlminify_resource</resourceModel>
+            </pommes_htmlminify>
+            <pommes_htmlminify_resource>
+                <class>Pommes_HtmlMinify_Model_Resource</class>
+            </pommes_htmlminify_resource>
+        </models>
+        <helpers>
+            <pommes_htmlminify>
+                <class>Pommes_HtmlMinify_Helper</class>
+            </pommes_htmlminify>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_postdispatch>
+                <observers>
+                    <pommes_htmlminify>
+                        <type>singleton</type>
+                        <class>pommes_htmlminify/observer</class>
+                        <method>minifyHtmlObserver</method>
+                    </pommes_htmlminify>
+                </observers>
+            </controller_action_postdispatch>
+        </events>
+    </frontend>
+    <default>
+        <pommes_htmlminify>
+            <configuration>
+                <enabled>0</enabled>
+                <method>0</method>
+                <remove_comments>0</remove_comments>
+                <actions><![CDATA[cms_index_index,
+cms_page_view,
+catalog_category_view,
+catalog_product_view]]></actions>
+            </configuration>
+        </pommes_htmlminify>
+    </default>
+</config>

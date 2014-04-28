@@ -1,0 +1,22 @@
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <pommes_htmlminify translate="title" module="pommes_htmlminify">
+                                        <title>HTML-Minify</title>
+                                        <sort_order>1</sort_order>
+                                    </pommes_htmlminify>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
